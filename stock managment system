@@ -1,0 +1,54 @@
+int main() {
+    StockManagementSystem system;
+    int choice;
+
+    while (true) {
+        // Display menu options
+        cout << "Stock Management System" << endl;
+        cout << "1. Add a new stock item" << endl;
+        cout << "2. Display current inventory" << endl;
+        cout << "3. Calculate item prices" << endl;
+        cout << "4. Calculate total price" << endl;
+        cout << "5. Update the stock item" << endl;
+        cout << "6. Remove stock item" << endl;
+        cout << "7. Save inventory to file" << endl;
+        cout << "8. Exit" << endl;
+
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                system.addStockItem();
+                break;
+            case 2:
+                system.displayInventory();
+                break;
+            case 3:
+                system.calculateItemPrices();
+                break;
+            case 4:
+                cout << "Total Price: $" << system.calculateTotalPrice() << endl;
+                break;
+            case 5:
+                system.updateItem();
+                break;
+            case 6:
+                system.removeStockItem();
+                break;
+            case 7:
+                system.saveToFile();
+                break;
+            case 8:
+                cout << "Exiting the program..." << endl;
+                return 0;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+                break;
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
